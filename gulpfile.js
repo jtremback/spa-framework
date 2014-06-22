@@ -15,7 +15,7 @@ gulp.task('styles', function () {
     .pipe(gulpLess({ paths: ['src/styles'] }))
     .pipe(gulpAutoprefixer('last 2 versions'))
     .pipe(gulpMinifyCss())
-    .pipe(gulp.dest('dist/styles'))
+    .pipe(gulp.dest('styles'))
     .pipe(gulpNotify({ message: 'styles task complete' }));
 });
 
@@ -23,14 +23,14 @@ gulp.task('scripts', function () {
   return gulp.src(['src/scripts/script.js'])
     .pipe(gulpInclude('// = '))
     .pipe(gulpUglify())
-    .pipe(gulp.dest('dist/scripts'))
+    .pipe(gulp.dest('scripts'))
     .pipe(gulpNotify({ message: 'scripts task complete' }));
 });
 
 gulp.task('html', function () {
   return gulp.src(['src/index.jade'])
     .pipe(gulpJade())
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest(''))
     .pipe(gulpNotify({ message: 'html task complete' }));
 });
 

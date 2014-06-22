@@ -1,0 +1,1 @@
+"use strict";function fooble(){alert("fooble")}fooble();
